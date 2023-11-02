@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.1.min.js"></script>
+
+</head>
+
+<body>
+    <div id="selected">
+        <p>Red</p>
+        <p>White</p>
+        <p>Green</p>
+        <p>Black</p>
+        <p>Blue</p>
+        <p>Orange</p>
+    </div>
+    <button id="btn">Click Me</button>
+    <p id="single-click" style="cursor: pointer;">Click Me!</p>
+    <p id="double-click" style="cursor: pointer;">Double Click Me!</p>
+    
+    
+</body>
+<script>
+    var count = $("#selected").children().length;
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $("#selected").text(count);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#single-click").click(function () {
+            $(this).hide();
+        });
+    });
+    $(document).ready(function () {
+        $("#double-click").dblclick(function () {
+            $(this).css("color", "red");
+        });
+    });
+</script>
+
+</html>
